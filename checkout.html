@@ -130,9 +130,12 @@
                 class="form-control ml-3"
                 type="text"
                 placeholder="First Name"
+                minlength="3"
+                required
               />
               <div id="errorName" class="invalid-feedback">
-                This field is required and must have, at least, 3 characters
+                This field is required and must have, at least, 3 characters and
+                only letters
               </div>
             </div>
             <div class="mt-3">
@@ -143,6 +146,7 @@
                 type="email"
                 placeholder="Email"
                 minlength="3"
+                required
               />
               <div id="errorEmail" class="invalid-feedback">
                 This field is required and must contain an '@' and have, at
@@ -157,6 +161,7 @@
                 type="text"
                 placeholder="Address"
                 minlength="3"
+                required
               />
               <div id="errorAddress" class="invalid-feedback">
                 This field is required and must have, at least, 3 characters
@@ -172,9 +177,11 @@
                 type="text"
                 placeholder="Last Name"
                 minlength="3"
+                required
               />
               <div id="errorLastN" class="invalid-feedback">
-                This field is required and must have, at least, 3 characters
+                This field is required and must have, at least, 3 characters and
+                only letters
               </div>
             </div>
             <div class="mt-3">
@@ -184,9 +191,10 @@
                 class="form-control"
                 title="(4-8 characters)"
                 type="password"
-                minlength="4"
+                minlength="3"
                 maxlength="8"
                 placeholder="Password"
+                required
               />
               <div id="errorPassword" class="invalid-feedback">
                 Enter a correct password
@@ -199,6 +207,8 @@
                 class="form-control"
                 type="number"
                 placeholder="Phone No."
+                minlength="9"
+                required
               />
               <div id="errorPhone" class="invalid-feedback">
                 Invalid phone number!! Must be 9 digits with no letters
@@ -207,7 +217,7 @@
           </div>
           <div class="col-12 mt-4 final">
             <button
-              type="submit"
+              type="button"
               id="btn"
               class="p-2 px-4 btn btn-primary shadow-lg"
               onclick="validate()"

@@ -18,36 +18,73 @@ function buy(id) {
             cartList.push(products[i]);
         }
     }
+    console.log(cartList);
 
+    calculateTotal();
+    generateCart();
 }
+
+
 
 // Exercise 2
 function cleanCart() {
-
+    cartList.length = 0;
+    console.log(cartList);
 }
 
 // Exercise 3
 function calculateTotal() {
     // Calculate total price of the cart using the "cartList" array
+    let totalPrice = 0;
+    for (let i = 0; i < cartList.length; i++) {
+        totalPrice += cartList[i].price;
+    }
+    console.log("PrecioTotal", totalPrice);
 }
+
 
 // Exercise 4
 function generateCart() {
     // Using the "cartlist" array that contains all the items in the shopping cart, 
     // generate the "cart" array that does not contain repeated items, instead each item of this array "cart" shows the quantity of product.
+
+    cart = [];
+
+    let cloneCartList = [...cartList];
+    let cartListLength = cloneCartList.length;
+
+    for (let i = 0; i < cartListLength; i++) {
+
+        let obj = cloneCartList[i];
+        let indexOfProduct = cart.indexOf(obj);
+        console.log("indice producto", indexOfProduct);
+
+        if (indexOfProduct === -1) {
+            cloneCartList[i].quantity = 1;
+            cart.push(cloneCartList[i]);
+
+        } else {
+            cloneCartList[i].quantity += 1;
+            console.log("valorQuantity", cloneCartList[i].quantity);
+        }
+    }
+
+    console.log("nueva cart", cart);
+
 }
 
 
 // Exercise 5
-function applyPromotionsCart(cart) {
+function applyPromotionsCart() {
     // Apply promotions to each item in the array "cart"
+
 }
+
 
 // Exercise 6
 function printCart() {
     // Fill the shopping cart modal manipulating the shopping cart dom
 }
-
 
 // ** Nivell II **
 
