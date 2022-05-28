@@ -5,8 +5,6 @@ var cartList = [];
 // Improved version of cartList. Cart is an array of products (objects), but each one has a quantity field to define its quantity, so these products are not repeated.
 var cart = [];
 
-var total = 0;
-
 // Exercise 1
 function buy(id) {
     // 1. Loop for to the array products to get the item to add to cart
@@ -22,8 +20,14 @@ function buy(id) {
 
     calculateTotal();
     generateCart();
+    productCount();
 }
 
+function productCount() {
+    let productCount = cartList.length;
+    console.log("productos comprados", productCount);
+    document.getElementById("count_product").innerHTML = productCount;
+}
 
 
 // Exercise 2
@@ -71,12 +75,30 @@ function generateCart() {
 
     console.log("nueva cart", cart);
 
+    applyPromotionsCart(cart);
 }
 
 
 // Exercise 5
-function applyPromotionsCart() {
+function applyPromotionsCart(cart) {
     // Apply promotions to each item in the array "cart"
+
+    for (let i = 0; i < cart.length; i++) {
+        if (cart[i].name == "cooking oil" && cart[i].quantity >= 3) {
+
+            let priceCookinOil = 10;
+            cart[i].subtotalWithDiscount = priceCookinOil;
+        }
+        else if (cart[i].name == "Instant cupcake mixture" && cart[i].quantity >= 10) {
+
+            let priceCupcake = (2 / 3 * cart[i].price);
+            cart[i].subtotalWithDiscount = priceCupcake.toFixed(2);
+        }
+        else {
+            cart[i].subtotalWithDiscount = cart[i].price;
+        }
+    }
+    console.log("cart con subtotal", cart);
 
 }
 
@@ -84,7 +106,29 @@ function applyPromotionsCart() {
 // Exercise 6
 function printCart() {
     // Fill the shopping cart modal manipulating the shopping cart dom
+
+    document.getElementById("cart_list").innerHTML = "";
+    let total = 0;
+
+    for (let i = 0; i < cart.length; i++) {
+        let name = cart[i].name;
+        let price = cart[i].price;
+        let quantity = cart[i].quantity;
+        let totalWithDiscount = cart[i].subtotalWithDiscount * quantity;
+
+        document.getElementById("cart_list").innerHTML += `<tr>
+        <th scope="row">${name}</th>
+        <td>$${price}</td>
+        <td>${quantity}</td>
+        <td>$${totalWithDiscount}</td>
+      </tr>`
+
+        total += totalWithDiscount;
+    }
+
+    document.getElementById("total_price").innerHTML = total
 }
+
 
 // ** Nivell II **
 
