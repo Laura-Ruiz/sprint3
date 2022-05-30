@@ -6,28 +6,29 @@ var cartList = [];
 var cart = [];
 
 // Exercise 1
-function buy(id) {
-    // 1. Loop for to the array products to get the item to add to cart
-    // 2. Add found product to the cartList array
-    let productLength = products.length;
 
-    for (let i = 0; i < productLength; i++) {
-        if (id == products[i].id) {
-            cartList.push(products[i]);
-        }
-    }
-    console.log(cartList);
+// function buy(id) {
+//     // 1. Loop for to the array products to get the item to add to cart
+//     // 2. Add found product to the cartList array
+//     let productLength = products.length;
 
-    calculateTotal();
-    generateCart();
-    productCount();
-}
+//     for (let i = 0; i < productLength; i++) {
+//         if (id == products[i].id) {
+//             cartList.push(products[i]);
+//         }
+//     }
+//     console.log(cartList);
 
-function productCount() {
-    let productCount = cartList.length;
-    console.log("productos comprados", productCount);
-    document.getElementById("count_product").innerHTML = productCount;
-}
+//     calculateTotal();
+//     generateCart();
+//     productCounter();
+// }
+
+// function productCounter() {
+//     let productCount = cartList.length;
+//     console.log("productos comprados", productCount);
+//     document.getElementById("count_product").innerHTML = productCount;
+// }
 
 
 // Exercise 2
@@ -114,13 +115,15 @@ function printCart() {
         let name = cart[i].name;
         let price = cart[i].price;
         let quantity = cart[i].quantity;
-        let totalWithDiscount = cart[i].subtotalWithDiscount * quantity;
+        let totalWithDiscount = (cart[i].subtotalWithDiscount * quantity).toFixed(2);
+
 
         document.getElementById("cart_list").innerHTML += `<tr>
         <th scope="row">${name}</th>
         <td>$${price}</td>
         <td>${quantity}</td>
         <td>$${totalWithDiscount}</td>
+        <td><button class='btn btn-danger btn-sm' onclick='removeFromCart(${cart[i].id})'>X</button></td>
       </tr>`
 
         total += totalWithDiscount;
@@ -133,19 +136,23 @@ function printCart() {
 // ** Nivell II **
 
 // Exercise 7
+
 function addToCart(id) {
     // Refactor previous code in order to simplify it 
     // 1. Loop for to the array products to get the item to add to cart
     // 2. Add found product to the cart array or update its quantity in case it has been added previously.
+
 }
 
-// Exercise 8
+//Exercise 8
 function removeFromCart(id) {
     // 1. Loop for to the array products to get the item to add to cart
     // 2. Add found product to the cartList array
+
 }
 
 function open_modal() {
     console.log("Open Modal");
     printCart();
+
 }
