@@ -76,7 +76,7 @@ function generateCart() {
 
     console.log("nueva cart", cart);
 
-    applyPromotionsCart(cart);
+
 }
 
 
@@ -115,8 +115,9 @@ function printCart() {
         let name = cart[i].name;
         let price = cart[i].price;
         let quantity = cart[i].quantity;
-        let totalWithDiscount = (cart[i].subtotalWithDiscount * quantity).toFixed(2);
-
+        let totalWithDiscount = cart[i].subtotalWithDiscount * quantity;
+        console.log(totalWithDiscount);
+        console.log(typeof totalWithDiscount);
 
         document.getElementById("cart_list").innerHTML += `<tr>
         <th scope="row">${name}</th>
@@ -137,22 +138,87 @@ function printCart() {
 
 // Exercise 7
 
+function buy(id) {
+    addToCart(id);
+}
+
 function addToCart(id) {
     // Refactor previous code in order to simplify it 
     // 1. Loop for to the array products to get the item to add to cart
     // 2. Add found product to the cart array or update its quantity in case it has been added previously.
 
+    let productLength = products.length;
+    let itemAddToCart;
+    for (let i = 0; i < productLength; i++) {
+        if (id == products[i].id) {
+            itemAddToCart = products[i];
+
+            let indexOfProduct = cart.indexOf(itemAddToCart);
+            console.log(indexOfProduct);
+
+            if (indexOfProduct === -1) {
+                itemAddToCart.quantity = 1;
+                cart.push(itemAddToCart);
+
+
+            } else {
+                cart[indexOfProduct].quantity += 1;
+            }
+
+            console.log(cart);
+
+        }
+    }
+
+    productCounter();
+}
+
+function productCounter() {
+    let totalProducts = 0;
+    for (let i = 0; i < cart.length; i++) {
+        totalProducts += cart[i].quantity;
+
+    }
+    document.getElementById("count_product").innerHTML = totalProducts;
 }
 
 //Exercise 8
 function removeFromCart(id) {
     // 1. Loop for to the array products to get the item to add to cart
     // 2. Add found product to the cartList array
+    let productLength = products.length;
+
+    document.getElementById("cart_list").innerHTML = "";
+
+    for (let i = 0; i < productLength; i++) {
+
+        if (id == products[i].id) {
+            itemAddToCart = products[i];
+
+            let indexOfProduct = cart.indexOf(itemAddToCart);
+
+            if (indexOfProduct > -1) {
+
+                if (cart[indexOfProduct].quantity > 1) {
+                    cart[indexOfProduct].quantity--;
+                    console.log(cart);
+                } else {
+                    cart.splice(indexOfProduct, 1);
+                    console.log(cart)
+                }
+            }
+        }
+
+
+    }
+    applyPromotionsCart(cart);
+    printCart();
 
 }
 
 function open_modal() {
     console.log("Open Modal");
+    applyPromotionsCart(cart)
     printCart();
 
 }
