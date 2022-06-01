@@ -1,3 +1,7 @@
+#Ignora carpeta node_modules
+node_modules
 
-node_modules/
+#Ignora archivos acabados en .json
 *.json
+!spec/*.json 
+

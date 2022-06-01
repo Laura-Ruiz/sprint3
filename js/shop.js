@@ -35,6 +35,7 @@ var cart = [];
 function cleanCart() {
     cartList.length = 0;
     console.log(cartList);
+    document.getElementById("total_price").innerHTML = 0;
 }
 
 // Exercise 3
@@ -211,6 +212,7 @@ function removeFromCart(id) {
                 } else {
                     cart.splice(indexOfProduct, 1);
                     console.log(cart)
+                    document.getElementById("total_price").innerHTML = 0
                 }
             }
         }
