@@ -75,8 +75,6 @@ function generateCart() {
     }
 
     console.log("nueva cart", cart);
-
-
 }
 
 
@@ -93,31 +91,38 @@ function applyPromotionsCart(cart) {
         else if (cart[i].name == "Instant cupcake mixture" && cart[i].quantity >= 10) {
 
             let priceCupcake = (2 / 3 * cart[i].price);
-            cart[i].subtotalWithDiscount = priceCupcake.toFixed(2);
+            cart[i].subtotalWithDiscount = priceCupcake;
         }
         else {
             cart[i].subtotalWithDiscount = cart[i].price;
         }
+
+
     }
     console.log("cart con subtotal", cart);
 
 }
 
-
+function currency(price) {
+    //return price.toLocaleString('es-ES',{style: 'currency',currency: 'EUR'})
+    return price.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+}
 // Exercise 6
 function printCart() {
     // Fill the shopping cart modal manipulating the shopping cart dom
+
 
     document.getElementById("cart_list").innerHTML = "";
     let total = 0;
 
     for (let i = 0; i < cart.length; i++) {
+
         let name = cart[i].name;
         let price = cart[i].price;
         let quantity = cart[i].quantity;
-        let totalWithDiscount = cart[i].subtotalWithDiscount * quantity;
-        console.log(totalWithDiscount);
-        console.log(typeof totalWithDiscount);
+        //let totalWithDiscount = Number(cart[i].subtotalWithDiscount * quantity).toFixed(2);
+        let totalWithDiscount = currency((cart[i].subtotalWithDiscount) * (quantity));
+
 
         document.getElementById("cart_list").innerHTML += `<tr>
         <th scope="row">${name}</th>
@@ -127,10 +132,11 @@ function printCart() {
         <td><button class='btn btn-danger btn-sm' onclick='removeFromCart(${cart[i].id})'>X</button></td>
       </tr>`
 
-        total += totalWithDiscount;
+        total += parseFloat(totalWithDiscount);
+        document.getElementById("total_price").innerHTML = currency(total);
     }
+    //!total && (total = 0);
 
-    document.getElementById("total_price").innerHTML = total
 }
 
 
@@ -169,7 +175,7 @@ function addToCart(id) {
 
         }
     }
-
+    //calculateTotalWithDiscount();
     productCounter();
 }
 
@@ -209,8 +215,8 @@ function removeFromCart(id) {
             }
         }
 
-
     }
+    //calculateTotalWithDiscount();
     applyPromotionsCart(cart);
     printCart();
 
@@ -220,5 +226,24 @@ function open_modal() {
     console.log("Open Modal");
     applyPromotionsCart(cart)
     printCart();
+
+}
+
+
+//Show all products
+
+function showAllProducts() {
+    let section_1 = document.getElementById("allProducts_section-1");
+    let section_2 = document.getElementById("allProducts_section-2");
+
+    if (section_1.style.display === "none" && section_2.style.display === "none") {
+        document.getElementById("text-boton").innerHTML = "Hide products"
+        section_1.style.display = "block";
+        section_2.style.display = "block";
+    } else {
+        document.getElementById("text-boton").innerHTML = "Show all products"
+        section_1.style.display = "none"
+        section_2.style.display = "none"
+    }
 
 }

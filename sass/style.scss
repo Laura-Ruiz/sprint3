@@ -1,0 +1,78 @@
+
+$primary: rgb(237, 220, 239);
+$secondary: rgb(206, 233, 238);
+
+
+$nav-tabs-border-color: none;
+$nav-link-color: #6e6d6d;
+$nav-link-hover-color: $secondary;
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+.icono-svg{
+    width: 3rem;
+    height: auto;
+}
+body{
+   font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+.container_products{
+    width: 20rem;
+}
+.card-img-top{
+    height: 17rem;
+}
+.buscador{
+    margin: 0 10rem 0 10rem;
+}
+
+.header_principal{
+    height: 28rem;
+}
+
+.second-section{
+   margin-top: 8rem;
+}
+#wave {
+    fill: $primary;
+}
+
+#wave-2 {
+    fill: $secondary
+}
+
+.div_svg{
+    height:1rem;
+}
+
+.navbar-link{
+    font-family: unset;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    
+    &:hover{
+        color:$secondary;
+    }
+}
+
+
+.nav-link.active {
+    border:0;
+    border-bottom: 3px solid $secondary !important; 
+    color: black;
+    font-weight: bold;
+}
+
+.illustration-products, .illustration-products{
+    width: 30rem;
+    height: auto;
+    
+}
+
+@media (max-width: 768px){
+    .buscador{
+        //width: max-content;
+        margin: 0 5rem 0 5rem;
+    }
+}

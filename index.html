@@ -25,6 +25,8 @@
       integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
       crossorigin="anonymous"
     />
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/style.css" />
     <!-- Core theme CSS (includes Bootstrap)-->
   </head>
   <body
@@ -33,11 +35,12 @@
     data-bs-offset="50"
   >
     <!-- Navigation-->
+    <main class="container d-flex flex-column">
     <nav
-      class="navbar py-3 py-lg-0 navbar-light bg-light navbar-expand-lg"
+      class="navbar py-3 py-lg-0 navbar-light bg-primary navbar-expand-lg"
       id="navbar-example2"
     >
-      <div class="container d-flex">
+      <div class="container d-flex pb-3">
         <a class="navbar-brand" href="#!">ShopNow</a>
         <div class="d-flex flex-row order-lg-last align-items-center">
           <button
@@ -73,56 +76,120 @@
             </li>
           </ul>
         </div>
-
+        <!--https://getwaves.io/-->
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="navbar-nav me-auto mb-4 mb-lg-0 ms-lg-5">
             <li class="nav-item">
-              <a class="nav-link" href="#grocery"
-                ><i class="fas fa-shopping-basket"></i> Grocery</a
+              <a class="nav-link" href="#trendingNew"
+                >Trending new</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#beauty"
-                ><i class="fas fa-heart"></i> Beauty</a
+              <a class="nav-link" href="#skinCare"
+                >Skin care</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#clothes"
-                ><i class="fas fa-tshirt"></i> Clothes</a
+              <a class="nav-link" href="#makeUp"
+                >Make up</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#hair"
+                >Hair</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#body"
+                > Body</a
               >
             </li>
           </ul>
         </div>
       </div>
     </nav>
+    <form class="d-flex bg-primary">
+      <input
+        class="buscador form-control rounded-pill"
+        type="search"
+        placeholder="Search"
+        aria-label="Search"
+      />
+    </form>
 
     <!-- Header-->
-    <header class="bg-dark py-5">
-      <div class="container px-4 px-lg-5 my-5">
-        <div class="text-center text-white">
-          <h1 class="display-4 fw-bolder">IT Academy Shop</h1>
-          <p class="lead fw-normal text-white-50 mb-0">
-            Get up to 50% off Today Only!
+    <header class="bg-primary">
+      <div class="header_principal container h-auto row align-items-center px-4 px-lg-5">
+        <div
+          class="col column-right text-center order-lg-2 col-12 col-lg-6 d-flex justify-content-center justify-content-lg-end"
+        >
+          <img
+            class="illustration-products img-fluid"
+            src="./images/pngwing.com.png"
+          />
+        </div>
+        <div
+          class="col order-lg-1 col-12 col-lg-6 text-center text-lg-start mt-lg-1 d-flex flex-column gap-2"
+        >
+          <h1 class="display-4">Clean beauty made easy</h1>
+          <p class="lead fw-normal mb-0">
+            Shop, discover and compare prices of yout favorite clean beauty
+            brands all in one place.
           </p>
+          <div>
+            <button class="btn btn-dark" type="submit">View top deals</button>
+          </div>
         </div>
       </div>
     </header>
+    <div class="div_svg">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path
+          id="wave"
+          fill-opacity="1"
+          d="M0,32L80,42.7C160,53,320,75,480,80C640,85,800,75,960,64C1120,53,1280,43,1360,37.3L1440,32L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
+        ></path>
+      </svg>
+    </div>
     <!-- Section-->
-    <section class="pt-5" id="grocery">
-      <h2 class="text-center">
-        <i class="fas fa-shopping-basket pe-3"></i>Grocery
-      </h2>
+    <section class="second-section container col-12 col-lg-6 text-center">
+      <h3>Shop Our Trending Beauty Products</h3>
+      <p>Explore the latest clean beauty essentials.</p>
+    </section>
+    <ul
+      class=" my-5 list_features nav nav-tabs justify-content-center d-flex flex-column flex-lg-row"
+    >
+      <li class="nav-item border-bottom d-flex justify-content-center">
+        <a class="nav-link active">Trending new</a>
+      </li>
+      <li class="nav-item border-bottom d-flex justify-content-center">
+        <a class="nav-link">Skin care</a>
+      </li>
+      <li class="nav-item border-bottom d-flex justify-content-center">
+        <a class="nav-link">Make up</a>
+      </li>
+      <li class="nav-item border-bottom d-flex justify-content-center">
+        <a class="nav-link">Hair</a>
+      </li>
+      <li class="nav-item border-bottom d-flex justify-content-center">
+        <a class="nav-link">Body</a>
+      </li>
+    </ul>
+    <section>
+      <h2 class="text-center"><i class="fas fa-heart mt-5 pe-3"></i>
+      Skin care</h2>
       <div class="container px-4 px-lg-5 mt-5">
         <div
           class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center"
         >
-          <div class="col mb-5">
+          <div class="container_products col mb-5">
             <div class="card h-100">
-              <img class="card-img-top" src="./images/product.svg" alt="..." />
+              <img class="card-img-top" src="./images/producto1.jpg" alt="..." />
               <div class="card-body p-4">
                 <div class="text-center">
-                  <h5 class="fw-bolder">Cooking Oil</h5>
-                  $10.5
+                  <h5 class="fw-bolder">Hyaluronic Acid 2% + B5</h5>
+                  <p class="fw-bolder">The Ordinary</p>
+                  <p>$10.5</p>
                 </div>
               </div>
               <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
@@ -138,13 +205,14 @@
               </div>
             </div>
           </div>
-          <div class="col mb-5">
+          <div class="container_products col mb-5">
             <div class="card h-100">
-              <img class="card-img-top" src="./images/product.svg" alt="..." />
+              <img class="card-img-top" src="./images/retinol.jpg" alt="..." />
               <div class="card-body p-4">
                 <div class="text-center">
-                  <h5 class="fw-bolder">Pasta</h5>
-                  $6.25
+                  <h5 class="fw-bolder">Retinol 0.2% in Squalane</h5>
+                  <p class="fw-bolder">The Ordinary</p>
+                  <p>$6.25</p>
                 </div>
               </div>
               <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
@@ -160,13 +228,14 @@
               </div>
             </div>
           </div>
-          <div class="col mb-5">
+          <div class="container_products col mb-5">
             <div class="card h-100">
-              <img class="card-img-top" src="./images/product.svg" alt="..." />
+              <img class="card-img-top" src="./images/acido-glicolico-the-ordinary.jpg" alt="..." />
               <div class="card-body p-4">
                 <div class="text-center">
-                  <h5 class="fw-bolder">Instant cupcake mixture</h5>
-                  $5
+                  <h5 class="fw-bolder">Glycolic Acid 7% Toning Solution</h5>
+                  <p class="fw-bolder">The Ordinary</p>
+                  <p>$5</p>
                 </div>
               </div>
               <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
@@ -185,19 +254,37 @@
         </div>
       </div>
     </section>
-    <section class="pt-5" id="beauty">
-      <h2 class="text-center"><i class="fas fa-heart pe-3"></i>Beauty</h2>
-      <div class="container px-4 px-lg-5 mt-5">
+    <section class="pt-5 d-flex flex-column" id="beauty">
+      <div
+              id="botonShowAll"
+              class="d-flex justify-content-center"
+            > 
+            <button
+              
+              class="btn btn-dark	
+              "
+              type="submit"
+              onclick="showAllProducts()"
+            >
+            <span id="text-boton">
+              Show all products
+            </span>
+              
+            </button>
+      </div>
+      
+      <div style="display:none;" id="allProducts_section-1" class="container px-4 px-lg-5 mt-5">
+        <h2 class="text-center"><img src="./images/paintbrush-solid.svg" class="icono-svg pe-3 my-5"></img>Make up</h2>
         <div
           class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center"
         >
-          <div class="col mb-5">
+          <div class="col mb-5 container_products">
             <div class="card h-100">
-              <img class="card-img-top" src="./images/product.svg" alt="..." />
+              <img class="card-img-top" src="./images/base.jpg" alt="..." />
               <div class="card-body p-4">
                 <div class="text-center">
-                  <h5 class="fw-bolder">All-in-1</h5>
-                  $260
+                  <h5 class="fw-bolder">Foundatios Fenty Beauty</h5>
+                  <p>$260</p>
                 </div>
               </div>
               <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
@@ -213,13 +300,13 @@
               </div>
             </div>
           </div>
-          <div class="col mb-5">
+          <div class="col mb-5 container_products">
             <div class="card h-100">
-              <img class="card-img-top" src="./images/product.svg" alt="..." />
+              <img class="card-img-top" src="./images/colorete-rosa.jpg" alt="..." />
               <div class="card-body p-4">
                 <div class="text-center">
-                  <h5 class="fw-bolder">Zero makeup kit</h5>
-                  $20.5
+                  <h5 class="fw-bolder">Mineralize Blush MAC Cosmteics</h5>
+                  <p>$20.5</p>
                 </div>
               </div>
               <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
@@ -235,12 +322,12 @@
               </div>
             </div>
           </div>
-          <div class="col mb-5">
+          <div class="col mb-5 container_products">
             <div class="card h-100">
-              <img class="card-img-top" src="./images/product.svg" alt="..." />
+              <img class="card-img-top" src="./images/pintalabios.jpg" alt="..." />
               <div class="card-body p-4">
                 <div class="text-center">
-                  <h5 class="fw-bolder">Lip tints</h5>
+                  <h5 class="fw-bolder">Dior Addict Lip Tint</h5>
                   $12.75
                 </div>
               </div>
@@ -260,18 +347,22 @@
         </div>
       </div>
     </section>
-    <section class="pt-5" id="clothes">
-      <h2 class="text-center"><i class="fas fa-tshirt pe-3"></i>Clothes</h2>
+    <section id="allProducts_section-2" style="display:none;" class="pt-5 products-hidden" id="clothes">
+      <h2 class="text-center"><img class="icono-svg pe-3 pb-3" src="./images/bath-solid.svg">Hair</h2>
+      <!-- <i class="fa-solid fa-bath pe-3"></i> -->
       <div class="container px-4 px-lg-5 mt-5">
         <div
           class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center"
         >
-          <div class="col mb-5">
+          <div class="col mb-5 container_products">
             <div class="card h-100">
-              <img class="card-img-top" src="./images/product.svg" alt="..." />
+              <img class="card-img-top" src="./images/champu.jpg" alt="..." />
               <div class="card-body p-4">
                 <div class="text-center">
-                  <h5 class="fw-bolder">Lawn dress</h5>
+                  <h5 class="fw-bolder">Champú Premium</h5>
+                  <p>
+                    Nuggela & Sulé
+                  </p>
                   $15
                 </div>
               </div>
@@ -288,12 +379,13 @@
               </div>
             </div>
           </div>
-          <div class="col mb-5">
+          <div class="col mb-5 container_products">
             <div class="card h-100">
-              <img class="card-img-top" src="./images/product.svg" alt="..." />
+              <img class="card-img-top" src="./images/mascarilla.jpg" alt="..." />
               <div class="card-body p-4">
                 <div class="text-center">
-                  <h5 class="fw-bolder">Lawn-chiffon combo</h5>
+                  <h5 class="fw-bolder">Original Remedies</h5>
+                  <p>Garnier</p>
                   $19.99
                 </div>
               </div>
@@ -310,9 +402,9 @@
               </div>
             </div>
           </div>
-          <div class="col mb-5">
+          <div class="col mb-5 container_products">
             <div class="card h-100">
-              <img class="card-img-top" src="./images/product.svg" alt="..." />
+              <img class="card-img-top" src="./images/sprayfijador.jpg" alt="..." />
               <div class="card-body p-4">
                 <div class="text-center">
                   <h5 class="fw-bolder">Toddler Frock</h5>
@@ -335,7 +427,47 @@
         </div>
       </div>
     </section>
-
+    <section>
+      <div>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path id="wave-2" fill-opacity="1" d="M0,128L80,117.3C160,107,320,85,480,85.3C640,85,800,107,960,112C1120,117,1280,107,1360,101.3L1440,96L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
+          </svg>
+      </div>
+      <section class="container-full bg-secondary">
+        <div class="row align-items-center px-5">
+          <div
+            class="col column-left-2 order-lg-1 mb-5 col-12 col-lg-6 d-flex justify-content-center"
+          >
+            <img
+              class="illustration-products img-fluid px-3"
+              src="./images/mujer-sonriendo-con-espuma-en-el-rostro-rutina-basica-skincare.jpg"
+            />
+            <div class="figure fig-left "></div>
+          </div>
+          <div
+            class="col order-lg-2 col-12 col-lg-6 ps-lg-5 text-center text-lg-start d-flex flex-column gap-2"
+          >
+            <h1 class="p-0">Beauty You Want. <br> Deals You Love.</h1>
+            
+            <p>
+              Organize your bookmarks however you like. Our simple drag-and-drop
+              interface gives you complete control over how you manage your
+              favourite sites.
+            </p>
+            <div
+              class="d-flex gap-2"
+            > 
+            <button
+              class="btn btn-primary 	
+              d-none d-lg-block"
+              type="submit"
+            >
+              Here info
+            </button>
+          </div>
+        </div>
+      </section>
+    </section>
     <!-- Footer-->
     <footer class="py-3 bg-dark">
       <div class="container">
@@ -425,5 +557,6 @@
     <script src="js/products.js"></script>
     <script src="js/shop.js"></script>
     <script src="js/checkout.js"></script>
+    </main>
   </body>
 </html>

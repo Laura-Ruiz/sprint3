@@ -1,0 +1,23 @@
+{
+  "name": "sprint3",
+  "version": "1.0.0",
+  "description": "A company in the e-commerce sector has asked us for a web application that allows them to offer the purchase of their products through the internet.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Laura-Ruiz/sprint3.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Laura-Ruiz/sprint3/issues"
+  },
+  "homepage": "https://github.com/Laura-Ruiz/sprint3#readme",
+  "dependencies": {
+    "bootstrap": "^5.1.3"
+  }
+}
